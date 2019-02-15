@@ -55,13 +55,45 @@ Coveriance = cov(Data)
 
 % How to avoid overfittiong during the training phase:
 %  - Overfitting is the production of an analysis that corresponds too closely
-%   or exactly to a particular set of data, and may therefor fail to fit
-%   additional data or predict future observations reliably.
+%    or exactly to a particular set of data, and may therefor fail to fit
+%    additional data or predict future observations reliably.
 % There are two possible explanations for overfitting:
 %  - The training data may contain noise, hence the machine learning
-%  algorithms may fit the noise into the model and therfor poor performance
+%    algorithms may fit the noise into the model and therfor poor performance
 %  would be obtained.
 %  - Secondly, limited training samples (i.e, small dataset) that are not
-%  sufficient to train the model.
+%    sufficient to train the model.
 
+% Code to generate training and testing datasets:
 
+clear all;
+clc;
+
+load fisheriris.mat;
+Data = meas;
+
+Total_Samples = size(Data, 1)
+Selected_Samples = 90
+assert(Selected_Samples <= Total_Samples)
+rand_rows = randperm(Total_Samples)
+
+k = 1;
+j = 1;
+
+for i = 1: size(Data, 1)
+    if k <= 90
+        TR_Temp{i} = Data(rand_rows(i),:);
+        k = k + 1;
+    else 
+        TE_Temp{j} = Data(rand_rows(i),:);
+        j = j + 1;
+    end
+end
+
+Training_Dataset = cell2mat(TR_Temp')
+Testing_Dataset = cell2mat(TE_Temp')
+
+%A = [1 2;3 4; 5 6];
+%B = [1 2;3 4; 5 5];
+
+[~, index_A, index_B] = intersect(Training_Dataset, Testing_Dataset, 'rows')   
