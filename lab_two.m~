@@ -50,18 +50,11 @@ Coveriance = cov(Data)
 % Ensure the test set meets the following:
 % - Is large enough to yield statistically meaningful results.
 % - Is representative of dataset as a whole...
-%   In other words, don't pick a test set with different characteristics from
-%   the training set.
+% In other words, don't pick a test set with different characteristics from
+% the training set.
 
 % How to avoid overfittiong during the training phase:
-%  - Overfitting is the production of an analysis that corresponds too closely
-%   or exactly to a particular set of data, and may therefor fail to fit
-%   additional data or predict future observations reliably.
-% There are two possible explanations for overfitting:
-%  - The training data may contain noise, hence the machine learning
-%  algorithms may fit the noise into the model and therfor poor performance
-%  would be obtained.
-%  - Secondly, limited training samples (i.e, small dataset) that are not
-%  sufficient to train the model.
-
-
+% Overfitting is the production of an analysis that corresponds too closely
+% or exactly to a particular set of data, and may therefor fail to fit
+% additional data or predict future observations reliably.
+% There are two possible expe
