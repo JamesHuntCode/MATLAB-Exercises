@@ -1,11 +1,24 @@
+clear all;
+clc;
+close all
+rng(0)
+
 % Lab on K-Means;
 
 % Define a dataset:
-data = [185, 170, 168, 179, 182, 188; 72, 56, 60, 68, 72, 77]
-data = transpose(data);
+% data = [185, 170, 168, 179, 182, 188; 72, 56, 60, 68, 72, 77]
+% data = transpose(data);
 
 % Run K-Means:
-%[index, cen] = kmeans(transpose(data), 2)
+% clusters = kmeans(data, 2);
+% [idx, cen] = kmeans((data), 2)
 
 % Plot data:
-silhouette(data, )
+% silhouette(data, clusters)
+
+xmin = 100;
+xmax = 300;
+n = 2000;
+x = (xmin + rand(1, n) * (xmax - xmin))
+x = x';
+xmin
